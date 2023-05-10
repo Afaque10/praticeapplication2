@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profile"
+    android:background="#090C29">
+
+    <LinearLayout
+        android:id="@+id/toplinaer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrowback">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Create Profile"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"
+
+            >
+
+        </TextView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/number"
+        android:gravity="center"
+        android:layout_below="@+id/toplinaer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/leftarrow"
+            >
+
+        </ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="2"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:textColor="#5C8FFF"
+            >
+        </TextView>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/rightarrow"
+            >
+
+        </ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/number"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textColor="#5C8FFF"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginLeft="5dp">
+        </TextView>
+
+        <EditText
+            android:layout_gravity="center"
+            android:padding="20dp"
+            android:layout_width="396dp"
+            android:layout_height="56dp"
+            android:background="@drawable/edittextbackgroung"
+            android:text="Enter your email address"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            >
+
+        </EditText>
+
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp">
+        <Button
+
+            android:layout_width="396dp"
+            android:layout_height="53dp"
+            android:text="Continue"
+            android:background="@drawable/buttonradius"
+            >
+
+        </Button>
+
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>

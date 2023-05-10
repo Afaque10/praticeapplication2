@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".enterotp"
+    android:background="#090C29"
+    >
+
+
+
+    <LinearLayout
+        android:id="@+id/toplinaer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrowback">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Verify Otp"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"
+
+            >
+
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginTop="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toplinaer"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:padding="20dp"
+            android:id="@+id/textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="We’ve sent a 6-digit code to
+\n your mobile number"
+            android:textColor="@color/white"
+            android:textSize="20dp">
+
+        </TextView>
+        <LinearLayout
+            android:padding="5dp"
+            android:layout_below="@+id/textview"
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="6dp"
+                android:layout_marginLeft="10dp"
+                >
+                <EditText
+                    android:gravity="center"
+                    android:background="#1B224A"
+                    android:layout_width="57dp"
+                    android:layout_height="53dp"
+                    android:textColor="@color/white">
+                </EditText>
+
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="6dp"
+                android:layout_marginLeft="10dp"
+                >
+                <EditText
+                    android:gravity="center"
+                    android:background="#1B224A"
+                    android:layout_width="57dp"
+                    android:layout_height="53dp"
+                    android:textColor="@color/white">
+                </EditText>
+
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="6dp"
+                android:layout_marginLeft="10dp"
+                >
+                <EditText
+                    android:gravity="center"
+                    android:background="#1B224A"
+                    android:layout_width="57dp"
+                    android:layout_height="53dp"
+                    android:textColor="@color/white">
+                </EditText>
+
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="6dp"
+                android:layout_marginLeft="10dp"
+                >
+                <EditText
+                    android:gravity="center"
+                    android:background="#1B224A"
+                    android:layout_width="57dp"
+                    android:layout_height="53dp"
+                    android:textColor="@color/white">
+                </EditText>
+
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="6dp"
+                android:layout_marginLeft="10dp"
+                >
+                <EditText
+                    android:gravity="center"
+                    android:background="#1B224A"
+                    android:layout_width="57dp"
+                    android:layout_height="53dp"
+                    android:textColor="@color/white">
+                </EditText>
+
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="6dp"
+                android:layout_marginLeft="10dp"
+                >
+                <EditText
+                    android:gravity="center"
+                    android:background="#1B224A"
+                    android:layout_width="57dp"
+                    android:layout_height="53dp"
+                    android:textColor="@color/white">
+                </EditText>
+
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/toplinear1"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:layout_below="@id/linear"
+            android:layout_width="380dp"
+            android:layout_height="56dp"
+            android:background="@drawable/nextbutton"
+            android:text="Verify">
+
+        </Button>
+        <TextView
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Didn’t  receive your code?"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            >
+
+        </TextView>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resend"
+            android:textColor="#5D90FF"
+            android:textSize="16dp"
+            >
+        </TextView>
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>

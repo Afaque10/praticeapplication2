@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".imageprofile"
+    tools:context=".linkspage"
     android:background="#090C29">
     <LinearLayout
         android:id="@+id/profile"
@@ -115,6 +115,18 @@
             android:orientation="horizontal"
             android:gravity="center"
             >
+            <TextView
+                android:gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Projects"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                >
+            </TextView>
+
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -125,7 +137,7 @@
                     android:gravity="center"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Projects"
+                    android:text="Links"
                     android:textColor="#5C8FFF"
                     android:textStyle="bold"
                     android:textSize="18dp"
@@ -140,28 +152,16 @@
 
                 </LinearLayout>
             </LinearLayout>
-
-
             <TextView
                 android:gravity="center"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Links"
+                android:text="About"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="18dp"
                 >
             </TextView>
-            <TextView
-                android:gravity="center"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="About"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="18dp"
-            >
-        </TextView>
 
 
         </LinearLayout>
@@ -187,15 +187,13 @@
                         >
 
                     </ImageView>
-                    <TextView
-                        android:layout_width="match_parent"
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="The Retro room"
-                        android:textColor="@color/white"
-                        android:gravity="center"
-                        >
+                        android:src="@drawable/youtubeicon">
 
-                    </TextView>
+                    </ImageView>
 
 
                 </androidx.cardview.widget.CardView>
@@ -213,6 +211,13 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/retroroom"
                     >
+
+                </ImageView>
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/youtubeicon">
 
                 </ImageView>
 

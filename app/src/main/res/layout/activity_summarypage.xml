@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".summarypage"
+    android:background="#090C29">
+
+    <LinearLayout
+        android:id="@+id/sammary"
+        android:padding="30dp"
+        android:layout_width="428dp"
+        android:layout_height="300dp"
+        android:background="@drawable/maxboximage"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrowback"
+            >
+
+        </ImageView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Booking Summary"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+
+            >
+
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_below="@+id/sammary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Max Box \nSoundstage"
+            android:textSize="24dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            >
+        </TextView>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="1901 Thornridge Cir. Shiloh, Hawaii 81063"
+            android:textColor="#C9D9FF"
+            >
+        </TextView>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Date and Time"
+            android:textColor="#C9D9FF"
+            >
+        </TextView>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="March 2,  6:30pm - 7:30 pm "
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+
+            >
+
+        </TextView>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Service"
+            android:textColor="#C9D9FF"
+            >
+        </TextView>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Recording a song"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+
+            >
+
+        </TextView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp">
+        <Button
+
+            android:layout_width="396dp"
+            android:layout_height="53dp"
+            android:text="Pay Now"
+            android:background="@drawable/buttonradius"
+            >
+
+        </Button>
+
+    </LinearLayout>
+
+    
+    
+    
+    
+</RelativeLayout>

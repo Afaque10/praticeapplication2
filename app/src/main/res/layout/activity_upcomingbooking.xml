@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bookinghistory"
+    android:background="#090C29">
+
+    <LinearLayout
+        android:id="@+id/mybooking"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrowback"
+            >
+
+        </ImageView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My Bookings"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+
+            >
+
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/bh"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/mybooking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        >
+        <LinearLayout
+            android:layout_width="214dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <TextView
+                android:gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Upcoming"
+                android:textColor="#5C8FFF"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                >
+            </TextView>
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#5C8FFF"
+                >
+
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="History"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            >
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bh"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="396dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            android:background="#1C2039"
+
+            >
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1C2039"
+
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <LinearLayout
+                        android:padding="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:src="@drawable/calendar2">
+
+                        </ImageView>
+                        <TextView
+                            android:paddingLeft="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nov. 01,2022"
+                            android:textColor="@color/white"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            >
+                        </TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:padding="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/clock"
+                            >
+
+                        </ImageView>
+                        <TextView
+                            android:paddingLeft="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10:30"
+                            android:textColor="@color/white"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            >
+                        </TextView>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="88dp"
+                            android:layout_height="34dp"
+                            app:cardCornerRadius="8dp">
+                            <TextView
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:background="#93B4FF"
+                                android:text="pending"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:cardCornerRadius="8dp"
+                                >
+
+                            </TextView>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:layout_width="356dp"
+                    android:layout_height="1dp"
+                    android:background="#9DA9AEA4"
+                    >
+                </LinearLayout>
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Music Box Soundstage"
+                    android:textColor="#C9D9FF"
+                    android:textSize="14dp"
+                    >
+                </TextView>
+                <Button
+                    android:layout_marginTop="20dp"
+                    android:layout_width="356dp"
+                    android:layout_height="53dp"
+                    android:text="View Details"
+                    android:background="@drawable/buttonradius"
+                    >
+                </Button>
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</RelativeLayout>

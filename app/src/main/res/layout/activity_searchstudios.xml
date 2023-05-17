@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".searchpage"
+    android:background="#090C29">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="396dp"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:background="@drawable/searchbar"
+            >
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/searchnormal"
+                android:layout_gravity="center"
+                >
+            </ImageView>
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="search by location, studio and others"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                >
+            </TextView>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/musicfilter"
+                android:layout_gravity="center">
+
+            </ImageView>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

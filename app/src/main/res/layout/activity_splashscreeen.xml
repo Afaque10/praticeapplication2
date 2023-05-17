@@ -6,27 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".splashscreeen"
     android:background="#4E84FD">
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Creative"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textSize="24dp"
-        >
-    </TextView>
-    <EditText
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Fox Club"
-        android:gravity="center"
-        android:textColor="#FFFFFF99"
-        android:textSize="12dp"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Creative"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            >
+        </TextView>
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fox Club"
+            android:textColor="#FFFFFF99"
+            android:textSize="12dp"
 
-        >
+            >
 
-    </EditText>
+        </TextView>
+
+    </LinearLayout>
+
 
 </RelativeLayout>

@@ -22,7 +22,9 @@ public class splashscreeen extends AppCompatActivity {
             @Override
             public void run() {
                 Intent a = new Intent(getApplicationContext(), onboarding.class);
+                a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(a);
+                finish();
             }
         }, 1500);
 

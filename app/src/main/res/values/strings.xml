@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">practiceproject2</string>
+    <string name="pref_previously_started">false</string>
 </resources>

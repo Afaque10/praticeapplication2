@@ -68,6 +68,7 @@
 
                 </TextView>
                 <Button
+                    android:id="@+id/on_boarding_button"
                     android:layout_width="293dp"
                     android:layout_height="44dp"
                     android:background="@drawable/nextbutton"

@@ -106,7 +106,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp">
         <Button
-
+            android:id="@+id/click"
             android:layout_width="396dp"
             android:layout_height="53dp"
             android:text="Continue"

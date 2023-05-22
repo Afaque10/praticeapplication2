@@ -187,15 +187,6 @@
                         >
 
                     </ImageView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="The Retro room"
-                        android:textColor="@color/white"
-                        android:gravity="center"
-                        >
-
-                    </TextView>
 
 
                 </androidx.cardview.widget.CardView>

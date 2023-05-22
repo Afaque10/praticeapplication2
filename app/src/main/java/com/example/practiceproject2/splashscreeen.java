@@ -37,7 +37,7 @@ public class splashscreeen extends AppCompatActivity {
                     startActivity(a);//starting the intent
                     finish();
                 }
-                else {
+                else{
                     Intent a = new Intent(getApplicationContext(), otppage.class);//intent object creation
                     a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);//registering flags
                     startActivity(a);//starting the intent

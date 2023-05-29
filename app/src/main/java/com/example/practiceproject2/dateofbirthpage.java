@@ -4,14 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 public class dateofbirthpage extends AppCompatActivity {
+    final Handler handler = new Handler(Looper.getMainLooper());
 
     Button bottombutton;
     EditText dobedittext;
+    ProgressBar prgbar;
+
 
 
     @Override
@@ -20,6 +27,7 @@ public class dateofbirthpage extends AppCompatActivity {
         setContentView(R.layout.activity_dateofbirthpage);
 
         dobedittext=(EditText) findViewById(R.id.dob);
+        prgbar = (ProgressBar) findViewById(R.id.prgggbar);
 
         bottombutton=(Button) findViewById(R.id.in);
         bottombutton.setOnClickListener(new View.OnClickListener() {
@@ -46,11 +54,15 @@ public class dateofbirthpage extends AppCompatActivity {
         x.putExtra("artist",artistdata);
         x.putExtra("gender",genderdata);
         x.putExtra("dateofbirth",dateofbirth);
-        startActivity(x);
-
-
-
-        startActivity(x);
-        finish();
+        prgbar.setVisibility(View.VISIBLE);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                prgbar.setVisibility(View.VISIBLE);
+                Toast.makeText(getApplicationContext(),"Login successfully",Toast.LENGTH_LONG).show();
+                startActivity(x);
+                finish();
+            }
+        },1500);
     }
 }

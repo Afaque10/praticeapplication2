@@ -7,6 +7,18 @@
     tools:context=".profile"
     android:background="#090C29">
 
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="183dp"
+        android:indeterminateTint="@color/white"
+        android:id="@+id/loadingbar"
+        android:visibility="gone"
+        >
+
+    </ProgressBar>
+
     <LinearLayout
         android:id="@+id/toplinaer"
         android:layout_width="match_parent"
@@ -91,7 +103,8 @@
             android:layout_width="396dp"
             android:layout_height="56dp"
             android:background="@drawable/edittextbackgroung"
-            android:text="Enter your email address"
+            android:hint="Enter your email address"
+            android:textColorHint="@color/white"
             android:textColor="@color/white"
             android:textSize="14dp"
             >

@@ -4,14 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 public class profile extends AppCompatActivity {
+    final Handler handler = new Handler(Looper.getMainLooper());
 
     Button connectbutton;
     EditText emailedittextview;
+    ProgressBar prgbar;
 
 
     @Override
@@ -21,7 +26,7 @@ public class profile extends AppCompatActivity {
 
 
         emailedittextview=(EditText) findViewById(R.id.emailaddress);
-
+        prgbar = (ProgressBar) findViewById(R.id.loadingbar);
         connectbutton=(Button) findViewById(R.id.top_button);
         connectbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +45,14 @@ public class profile extends AppCompatActivity {
         String emaildata = emailedittextview.getText().toString().trim();
         x.putExtra("email",emaildata);
         x.putExtra("full_name",fullname);
-
-        startActivity(x);
+        prgbar.setVisibility(View.VISIBLE);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                prgbar.setVisibility(View.VISIBLE);
+                startActivity(x);
+                finish();
+            }
+        },1500);
     }
 }

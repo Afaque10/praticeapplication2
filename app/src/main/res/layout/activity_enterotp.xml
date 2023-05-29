@@ -194,6 +194,15 @@
             android:text="Verify">
 
         </Button>
+        <ProgressBar
+            android:id="@+id/load"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:indeterminateTint="@color/white"
+            android:visibility="gone"
+            >
+
+        </ProgressBar>
         <TextView
             android:layout_marginTop="50dp"
             android:gravity="center"

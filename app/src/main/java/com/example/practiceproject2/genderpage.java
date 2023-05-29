@@ -4,14 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 public class genderpage extends AppCompatActivity {
+    final Handler handler = new Handler(Looper.getMainLooper());
 
     Button downbutton;
     EditText genderedittext;
+    ProgressBar prgbar;
 
 
     @Override
@@ -20,7 +25,7 @@ public class genderpage extends AppCompatActivity {
         setContentView(R.layout.activity_genderpage);
 
         genderedittext=(EditText)   findViewById(R.id.gender);
-
+        prgbar = (ProgressBar) findViewById(R.id.loadingbar);
 
         downbutton=(Button) findViewById(R.id.tap);
         downbutton.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +49,14 @@ public class genderpage extends AppCompatActivity {
         x.putExtra("email",emaildata);
         x.putExtra("artist",artistdata);
         x.putExtra("gender",genderdata);
-        startActivity(x);
+        prgbar.setVisibility(View.VISIBLE);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                prgbar.setVisibility(View.VISIBLE);
+                startActivity(x);
+                finish();
+            }
+        },1500);
     }
 }

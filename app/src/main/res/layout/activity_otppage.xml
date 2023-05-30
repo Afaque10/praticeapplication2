@@ -89,13 +89,15 @@
                 app:cardCornerRadius="6dp"
                 >
                 <EditText
-
+                    android:id="@+id/otpnumber"
+                    android:maxLength="10"
                     android:padding="10dp"
-
+                    android:inputType="number"
                     android:background="#1B224A"
                     android:layout_width="329dp"
                     android:layout_height="53dp"
-                    android:text="0 0 0 0 0 0 0 0 0 0"
+                    android:hint="0 0 0 0 0 0 0 0 0 0"
+                    android:textColorHint="@color/white"
                     android:textColor="@color/white">
                 </EditText>
             </androidx.cardview.widget.CardView>

@@ -8,12 +8,13 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class otppage extends AppCompatActivity {
     final Handler handler = new Handler(Looper.getMainLooper());
-
+    EditText Phonenumber;
     Button enterbutton;
     ProgressBar prgbar;
 
@@ -23,6 +24,7 @@ public class otppage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otppage);
         prgbar = (ProgressBar) findViewById(R.id.progressbar);
+        Phonenumber=(EditText) findViewById(R.id.otpnumber);
         enterbutton=(Button) findViewById(R.id.next);
         enterbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,18 +36,27 @@ public class otppage extends AppCompatActivity {
 
     }
     public void  abc( ){
-        Intent x = new Intent(otppage.this,enterotp.class);
-        x.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-        prgbar.setVisibility(View.VISIBLE);
-       handler.postDelayed(new Runnable() {
-           @Override
-           public void run() {
-               prgbar.setVisibility(View.VISIBLE);
-               Toast.makeText(getApplicationContext(),"Otp sent successfully",Toast.LENGTH_LONG).show();
-               startActivity(x);
-               finish();
-           }
-       },1500);
+        String phone = Phonenumber.getText().toString().trim();
+        if (phone.length()!=10){
+            Toast.makeText(getApplicationContext(),"Phone Number Should be 10 Digits",Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            Intent x = new Intent(otppage.this,enterotp.class);
+            x.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+            prgbar.setVisibility(View.VISIBLE);
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    prgbar.setVisibility(View.GONE);
+                    Toast.makeText(getApplicationContext(),"Otp sent successfully",Toast.LENGTH_LONG).show();
+                    startActivity(x);
+                    finish();
+                }
+            },1500);
+        }
+
+
 
 
 

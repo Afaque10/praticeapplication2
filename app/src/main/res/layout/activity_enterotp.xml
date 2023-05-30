@@ -51,7 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:text="We’ve sent a 6-digit code to
+            android:text="We’ve sent a 5-digit code to
 \n your mobile number"
             android:textColor="@color/white"
             android:textSize="20dp">
@@ -61,6 +61,7 @@
             android:padding="5dp"
             android:layout_below="@+id/textview"
             android:id="@+id/linear"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
@@ -71,6 +72,9 @@
                 android:layout_marginLeft="10dp"
                 >
                 <EditText
+                    android:maxLength="1"
+                    android:id="@+id/otpdigit1"
+                    android:inputType="number"
                     android:gravity="center"
                     android:background="#1B224A"
                     android:layout_width="57dp"
@@ -90,6 +94,9 @@
                 android:layout_marginLeft="10dp"
                 >
                 <EditText
+                    android:maxLength="1"
+                    android:id="@+id/otpdigit2"
+                    android:inputType="number"
                     android:gravity="center"
                     android:background="#1B224A"
                     android:layout_width="57dp"
@@ -109,6 +116,9 @@
                 android:layout_marginLeft="10dp"
                 >
                 <EditText
+                    android:maxLength="1"
+                    android:id="@+id/otpdigit3"
+                    android:inputType="number"
                     android:gravity="center"
                     android:background="#1B224A"
                     android:layout_width="57dp"
@@ -128,6 +138,9 @@
                 android:layout_marginLeft="10dp"
                 >
                 <EditText
+                    android:maxLength="1"
+                    android:id="@+id/otpdigit4"
+                    android:inputType="number"
                     android:gravity="center"
                     android:background="#1B224A"
                     android:layout_width="57dp"
@@ -147,25 +160,9 @@
                 android:layout_marginLeft="10dp"
                 >
                 <EditText
-                    android:gravity="center"
-                    android:background="#1B224A"
-                    android:layout_width="57dp"
-                    android:layout_height="53dp"
-                    android:textColor="@color/white">
-                </EditText>
-
-
-
-
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                app:cardCornerRadius="6dp"
-                android:layout_marginLeft="10dp"
-                >
-                <EditText
+                    android:maxLength="1"
+                    android:id="@+id/otpdigit5"
+                    android:inputType="number"
                     android:gravity="center"
                     android:background="#1B224A"
                     android:layout_width="57dp"
@@ -191,6 +188,8 @@
             android:layout_width="380dp"
             android:layout_height="56dp"
             android:background="@drawable/nextbutton"
+            android:enabled="true"
+
             android:text="Verify">
 
         </Button>

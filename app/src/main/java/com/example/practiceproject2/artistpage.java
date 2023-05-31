@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 public class artistpage extends AppCompatActivity {
     final Handler handler = new Handler(Looper.getMainLooper());
@@ -45,17 +46,27 @@ public class artistpage extends AppCompatActivity {
         String fullname = intent.getStringExtra("full_name");
         String artistdata = artistedittext.getText().toString().trim();
         String emaildata = intent.getStringExtra("email");
-        x.putExtra("artist",artistdata);
-        x.putExtra("full_name",fullname);
-        x.putExtra("email",emaildata);
-        prgbar.setVisibility(View.VISIBLE);
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                prgbar.setVisibility(View.VISIBLE);
-                startActivity(x);
-                finish();
-            }
-        },1500);
+
+        if (artistdata.isEmpty())
+        {
+            Toast.makeText(getApplicationContext(),"Name Sould not be Empty",Toast.LENGTH_LONG).show();
+        }
+        else {
+            x.putExtra("artist",artistdata);
+            x.putExtra("full_name",fullname);
+            x.putExtra("email",emaildata);
+            prgbar.setVisibility(View.VISIBLE);
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    prgbar.setVisibility(View.VISIBLE);
+                    startActivity(x);
+                    finish();
+                }
+            },1500);
+
+        }
+
+
     }
 }

@@ -104,7 +104,8 @@
             android:layout_width="396dp"
             android:layout_height="56dp"
             android:background="@drawable/edittextbackgroung"
-            android:text="Select Gender"
+            android:hint="Male/Female"
+            android:textColorHint="@color/white"
             android:textColor="@color/white"
             android:textSize="14dp"
             android:drawableRight="@drawable/rightarrow">

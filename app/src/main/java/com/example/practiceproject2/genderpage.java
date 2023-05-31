@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 public class genderpage extends AppCompatActivity {
     final Handler handler = new Handler(Looper.getMainLooper());
@@ -45,18 +46,35 @@ public class genderpage extends AppCompatActivity {
         String fullname = intent.getStringExtra("full_name");
         String emaildata = intent.getStringExtra("email");
         String artistdata = intent.getStringExtra("artist");
-        x.putExtra("full_name",fullname);
-        x.putExtra("email",emaildata);
-        x.putExtra("artist",artistdata);
-        x.putExtra("gender",genderdata);
-        prgbar.setVisibility(View.VISIBLE);
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
+
+        if (genderdata.isEmpty())
+        {
+            Toast.makeText(getApplicationContext(),"Gender Should not be empty",Toast.LENGTH_LONG).show();
+        }
+        else {
+            if (genderdata.contains("Male")||genderdata.contains("Female")){
+                x.putExtra("full_name",fullname);
+                x.putExtra("email",emaildata);
+                x.putExtra("artist",artistdata);
+                x.putExtra("gender",genderdata);
                 prgbar.setVisibility(View.VISIBLE);
-                startActivity(x);
-                finish();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        prgbar.setVisibility(View.VISIBLE);
+                        startActivity(x);
+                        finish();
+                    }
+                },1500);
             }
-        },1500);
+            else {
+                Toast.makeText(getApplicationContext(),"Invalid Gender",Toast.LENGTH_LONG).show();
+            }
+
+
+        }
+
+
+
     }
 }

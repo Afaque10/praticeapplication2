@@ -97,13 +97,14 @@
         </TextView>
 
         <EditText
+            android:inputType="date"
             android:id="@+id/dob"
             android:layout_gravity="center"
             android:padding="20dp"
             android:layout_width="396dp"
             android:layout_height="56dp"
             android:background="@drawable/edittextbackgroung"
-            android:hint="Enter your birth date"
+            android:hint="DD/MM/YYYY"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
             android:textSize="14dp"

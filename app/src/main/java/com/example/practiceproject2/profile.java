@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 public class profile extends AppCompatActivity {
     final Handler handler = new Handler(Looper.getMainLooper());
@@ -43,16 +44,33 @@ public class profile extends AppCompatActivity {
 
         String fullname = intent.getStringExtra("full_name");
         String emaildata = emailedittextview.getText().toString().trim();
-        x.putExtra("email",emaildata);
-        x.putExtra("full_name",fullname);
-        prgbar.setVisibility(View.VISIBLE);
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                prgbar.setVisibility(View.VISIBLE);
-                startActivity(x);
-                finish();
+        if (emaildata.isEmpty())
+        {
+            Toast.makeText(getApplicationContext(),"Email Should not be empty",Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            if (!emaildata.contains("@gmail.com")){
+                Toast.makeText(getApplicationContext(),"Email Invalid",Toast.LENGTH_LONG).show();
             }
-        },1500);
+            else {
+                x.putExtra("email",emaildata);
+                x.putExtra("full_name",fullname);
+                prgbar.setVisibility(View.VISIBLE);
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        prgbar.setVisibility(View.GONE);
+                        startActivity(x);
+                        finish();
+                    }
+                },1500);
+
+            }
+
+
+        }
+
+
     }
 }

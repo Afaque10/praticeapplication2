@@ -22,6 +22,7 @@ public class completeprofile extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,16 +45,24 @@ public class completeprofile extends AppCompatActivity {
     public void  qwe( ){
         Intent x = new Intent(completeprofile.this,profile.class);
         String namedata = fullnameedittext.getText().toString().trim();
-        x.putExtra("full_name",namedata);
-        prgbar.setVisibility(View.VISIBLE);
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                prgbar.setVisibility(View.VISIBLE);
-                startActivity(x);
-                finish();
-            }
-        },1500);
+        if (namedata.isEmpty()){
+            Toast.makeText(getApplicationContext(),"Name cannot be empty",Toast.LENGTH_LONG).show();
+
+        }
+        else {
+            x.putExtra("full_name",namedata);
+            prgbar.setVisibility(View.VISIBLE);
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    prgbar.setVisibility(View.VISIBLE);
+                    startActivity(x);
+                    finish();
+                }
+            },1500);
+
+        }
+
 
 
     }

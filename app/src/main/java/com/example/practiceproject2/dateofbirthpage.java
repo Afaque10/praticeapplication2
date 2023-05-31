@@ -49,20 +49,31 @@ public class dateofbirthpage extends AppCompatActivity {
         String emaildata = intent.getStringExtra("email");
         String artistdata = intent.getStringExtra("artist");
         String genderdata = intent.getStringExtra("gender");
-        x.putExtra("full_name",fullname);
-        x.putExtra("email",emaildata);
-        x.putExtra("artist",artistdata);
-        x.putExtra("gender",genderdata);
-        x.putExtra("dateofbirth",dateofbirth);
-        prgbar.setVisibility(View.VISIBLE);
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                prgbar.setVisibility(View.VISIBLE);
-                Toast.makeText(getApplicationContext(),"Login successfully",Toast.LENGTH_LONG).show();
-                startActivity(x);
-                finish();
-            }
-        },1500);
+        if (dateofbirth.isEmpty())
+        {
+            Toast.makeText(getApplicationContext(),"DOB cannot be empty",Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            x.putExtra("full_name",fullname);
+            x.putExtra("email",emaildata);
+            x.putExtra("artist",artistdata);
+            x.putExtra("gender",genderdata);
+            x.putExtra("dateofbirth",dateofbirth);
+            prgbar.setVisibility(View.VISIBLE);
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    prgbar.setVisibility(View.VISIBLE);
+                    Toast.makeText(getApplicationContext(),"Login successfully",Toast.LENGTH_LONG).show();
+                    startActivity(x);
+                    finish();
+                }
+            },1500);
+
+        }
+
+
+
     }
 }

@@ -98,16 +98,16 @@
 
         <EditText
             android:id="@+id/emailaddress"
-            android:layout_gravity="center"
-            android:padding="20dp"
             android:layout_width="396dp"
             android:layout_height="56dp"
+            android:layout_gravity="center"
             android:background="@drawable/edittextbackgroung"
             android:hint="Enter your email address"
-            android:textColorHint="@color/white"
+            android:inputType="textEmailAddress"
+            android:padding="20dp"
             android:textColor="@color/white"
-            android:textSize="14dp"
-            >
+            android:textColorHint="@color/white"
+            android:textSize="14dp">
 
         </EditText>
 

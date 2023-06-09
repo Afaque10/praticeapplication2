@@ -7,9 +7,6 @@
     tools:context=".otppage"
     android:background="#090C29"
     >
-
-
-
     <LinearLayout
         android:id="@+id/toplinaer"
         android:layout_width="match_parent"
@@ -38,9 +35,9 @@
         </TextView>
     </LinearLayout>
     <LinearLayout
-        android:id="@+id/linearlayout"
+       android:visibility="visible"
+        android:id="@+id/linearlayoutsendotp"
         android:gravity="center"
-        android:layout_marginTop="120dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toplinaer"
@@ -51,7 +48,6 @@
             android:id="@+id/textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:text="Welcome back!
 \nLet’s get started with your account"
             android:textColor="@color/white"
@@ -89,7 +85,7 @@
                 app:cardCornerRadius="6dp"
                 >
                 <EditText
-                    android:id="@+id/otpnumber"
+                    android:id="@+id/phonenumberedittext"
                     android:maxLength="10"
                     android:padding="10dp"
                     android:inputType="number"
@@ -108,7 +104,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/next"
+            android:id="@+id/otpsendbutton"
             android:layout_marginTop="10dp"
             android:padding="10dp"
             android:layout_below="@id/linear"
@@ -118,23 +114,204 @@
             android:text="Next">
 
         </Button>
+
+        <ProgressBar
+            android:id="@+id/progressbarsendotp"
+            android:visibility="gone"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarStyle="outsideInset"
+            android:indeterminateTint="@color/white"
+
+            >
+        </ProgressBar>
+
     </LinearLayout>
-    <ProgressBar
-        android:id="@+id/progressbar"
+    <LinearLayout
+        android:id="@+id/linearlayoutverifyotp"
         android:visibility="gone"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/linearlayout"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbarStyle="outsideInset"
-        android:indeterminateTint="@color/white"
-
+        android:layout_below="@id/toplinaer"
+        android:orientation="vertical"
         >
+        <TextView
+            android:padding="20dp"
+            android:id="@+id/otptextview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="We’ve sent a 6-digit code to
+\n your mobile number"
+            android:textColor="@color/white"
+            android:textSize="20dp">
 
-    </ProgressBar>
+        </TextView>
+        <TextView
+            android:padding="20dp"
+            android:id="@+id/phonetextview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="+91 1051515515"
+            android:textColor="@color/white"
+            android:textSize="20dp">
 
+        </TextView>
+        <LinearLayout
+            android:layout_below="@+id/phonetextview"
+            android:id="@+id/otplinear"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="6dp"
+                android:layout_marginLeft="10dp"
+                >
+                <EditText
+                    android:maxLength="1"
+                    android:id="@+id/otpdigit1"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:background="#1B224A"
+                    android:layout_width="57dp"
+                    android:layout_height="53dp"
+                    android:textColor="@color/white">
+                </EditText>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="6dp"
+                android:layout_marginLeft="10dp"
+                >
+                <EditText
+                    android:maxLength="1"
+                    android:id="@+id/otpdigit2"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:background="#1B224A"
+                    android:layout_width="57dp"
+                    android:layout_height="53dp"
+                    android:textColor="@color/white">
+                </EditText>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="6dp"
+                android:layout_marginLeft="10dp"
+                >
+                <EditText
+                    android:maxLength="1"
+                    android:id="@+id/otpdigit3"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:background="#1B224A"
+                    android:layout_width="57dp"
+                    android:layout_height="53dp"
+                    android:textColor="@color/white">
+                </EditText>
 
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="6dp"
+                android:layout_marginLeft="10dp"
+                >
+                <EditText
+                    android:maxLength="1"
+                    android:id="@+id/otpdigit4"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:background="#1B224A"
+                    android:layout_width="57dp"
+                    android:layout_height="53dp"
+                    android:textColor="@color/white">
+                </EditText>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="6dp"
+                android:layout_marginLeft="10dp"
+                >
+                <EditText
+                    android:maxLength="1"
+                    android:id="@+id/otpdigit5"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:background="#1B224A"
+                    android:layout_width="57dp"
+                    android:layout_height="53dp"
+                    android:textColor="@color/white">
+                </EditText>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="6dp"
+                android:layout_marginLeft="10dp"
+                >
+                <EditText
+                    android:maxLength="1"
+                    android:id="@+id/otpdigit6"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:background="#1B224A"
+                    android:layout_width="57dp"
+                    android:layout_height="53dp"
+                    android:textColor="@color/white">
+                </EditText>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <Button
+            android:id="@+id/otpverifybutton"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:layout_below="@id/linear"
+            android:layout_width="380dp"
+            android:layout_height="56dp"
+            android:background="@drawable/nextbutton"
+            android:text="Verify">
+        </Button>
 
+        <ProgressBar
+            android:id="@+id/progressbarotpverify"
+            android:visibility="gone"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarStyle="outsideInset"
+            android:indeterminateTint="@color/white"
 
+            >
+        </ProgressBar>
 
+        <TextView
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Didn’t  receive your code?"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            >
+
+        </TextView>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resend"
+            android:textColor="#5D90FF"
+            android:textSize="16dp"
+            >
+        </TextView>
+    </LinearLayout>
 </RelativeLayout>

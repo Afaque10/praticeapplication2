@@ -41,6 +41,7 @@ public class otppage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otppage);
+
         prgbarotpsend = (ProgressBar) findViewById(R.id.progressbarsendotp);
         prgbarotpverify = (ProgressBar) findViewById(R.id.progressbarotpverify);
         Phonenumberedittext=(EditText) findViewById(R.id.phonenumberedittext);
@@ -69,6 +70,7 @@ public class otppage extends AppCompatActivity {
         verifyotpbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 verifyOTP();
             }
         });

@@ -24,19 +24,6 @@ public class imageprofile extends AppCompatActivity {
         emailaddress = findViewById(R.id.email);
         artisttype = findViewById(R.id.artist);
 
-        Intent intent = getIntent();
-        String full_name = intent.getStringExtra("full_name");
-        String email = intent.getStringExtra("email");
-        String artist = intent.getStringExtra("artist");
-        String Dob = intent.getStringExtra("dateofbirth");
-        String gender = intent.getStringExtra("gender");
-
-
-        name.setText(full_name);
-        emailaddress.setText(email);
-        artisttype.setText(artist);
-        datofbirth.setText(Dob);
-        Gender.setText(gender);
 
 
     }

@@ -70,6 +70,7 @@
             android:textSize="16dp"
             android:textColor="#5C8FFF"
             >
+
         </TextView>
         <ImageView
             android:layout_width="wrap_content"

@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
@@ -35,6 +36,7 @@ public class otppage extends AppCompatActivity {
     FirebaseAuth mAuth; // object created
     LinearLayout otpsendlayout,otpverifylayout;
     String otpID,phonenumber,finalotp;
+    Button SignButton;
 
 
     @Override
@@ -43,6 +45,7 @@ public class otppage extends AppCompatActivity {
         setContentView(R.layout.activity_otppage);
 
         prgbarotpsend = (ProgressBar) findViewById(R.id.progressbarsendotp);
+        SignButton=(Button) findViewById(R.id.loginbutton);
         prgbarotpverify = (ProgressBar) findViewById(R.id.progressbarotpverify);
         Phonenumberedittext=(EditText) findViewById(R.id.phonenumberedittext);
         verifyotpbutton = (Button) findViewById(R.id.otpverifybutton);
@@ -58,6 +61,15 @@ public class otppage extends AppCompatActivity {
         otpdigitfour=(EditText) findViewById(R.id.otpdigit4);
         otpdigitfive=(EditText) findViewById(R.id.otpdigit5);
         otpdigitsix=(EditText) findViewById(R.id.otpdigit6);
+
+
+        SignButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent x = new Intent(otppage.this,loginpage.class);
+                startActivity(x);
+            }
+        });
 
         sendotpbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,7 +126,7 @@ public class otppage extends AppCompatActivity {
     }
 
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
-        mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
@@ -196,6 +208,20 @@ public class otppage extends AppCompatActivity {
         }
 
 
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            // User is signed in
+            Intent mainIntent = new Intent(otppage.this,imageprofile.class);
+            mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(mainIntent);
+            finish();
+        }
 
     }
 }

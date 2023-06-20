@@ -52,7 +52,7 @@ public class profile extends AppCompatActivity {
         {
             if (!emaildata.contains("@gmail.com")){
                 Toast.makeText(getApplicationContext(),"Email Invalid",Toast.LENGTH_LONG).show();
-            }
+             }
             else {
                 x.putExtra("email",emaildata);
                 x.putExtra("full_name",fullname);

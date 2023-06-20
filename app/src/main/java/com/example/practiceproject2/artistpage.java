@@ -36,7 +36,7 @@ public class artistpage extends AppCompatActivity {
                 asd();
 
             }
-        });
+            });
 
     }
     public void  asd( ){

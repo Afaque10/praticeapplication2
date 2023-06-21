@@ -1,5 +1,6 @@
 package com.example.practiceproject2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,12 +13,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class imageprofile extends AppCompatActivity {
 
     TextView name,datofbirth,Gender,emailaddress,artisttype;
     ImageView Loggout;
     FirebaseAuth mAuth;
+    String uid ;
+    DatabaseReference profileref;
 
 
     @Override
@@ -31,6 +39,37 @@ public class imageprofile extends AppCompatActivity {
         emailaddress = findViewById(R.id.email);
         artisttype = findViewById(R.id.artist);
         mAuth=FirebaseAuth.getInstance();
+        uid = mAuth.getCurrentUser().getUid();
+        profileref = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+
+        profileref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                String dbname,dbgender,dbemail,dbartisttype,dbdob;
+
+                dbname = snapshot.child("Name").getValue().toString();
+                dbgender = snapshot.child("Gender").getValue().toString();
+                dbemail = snapshot.child("Email").getValue().toString();
+                dbartisttype = snapshot.child("Arstist").getValue().toString();
+                dbdob = snapshot.child("DOB").getValue().toString();
+
+                name.setText(dbname);
+                Gender.setText(dbgender);
+                emailaddress.setText(dbemail);
+                datofbirth.setText(dbdob);
+                artisttype.setText(dbartisttype);
+
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         Loggout.setOnClickListener(new View.OnClickListener() {
             @Override

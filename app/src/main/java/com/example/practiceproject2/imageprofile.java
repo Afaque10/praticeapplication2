@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class imageprofile extends AppCompatActivity {
 
-    TextView name,datofbirth,Gender,emailaddress,artisttype;
+    TextView name,datofbirth,Gender,emailaddress,artisttype,abouttap;
     ImageView Loggout;
     FirebaseAuth mAuth;
     String uid ;
@@ -34,6 +35,7 @@ public class imageprofile extends AppCompatActivity {
         setContentView(R.layout.activity_imageprofile);
         Loggout=(ImageView) findViewById(R.id.loggoutbutton);
         name = findViewById(R.id.name);
+        abouttap = findViewById(R.id.card_about);
         datofbirth = findViewById(R.id.dob);
         Gender = findViewById(R.id.gender);
         emailaddress = findViewById(R.id.email);
@@ -83,6 +85,18 @@ public class imageprofile extends AppCompatActivity {
 
             }
         });
+        abouttap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                asd();
+
+            }
+            public void  asd( ){
+                Intent x = new Intent(imageprofile.this,list_users.class);
+                startActivity(x);
+            }
+        });
+
 
 
 

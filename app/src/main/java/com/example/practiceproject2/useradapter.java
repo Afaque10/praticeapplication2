@@ -55,8 +55,6 @@ public class useradapter extends FirebaseRecyclerAdapter
         return new useradapter.userViewholder(view);
     }
 
-    public void startLisenting() {
-    }
 
     class userViewholder extends RecyclerView.ViewHolder {
         TextView Artistholder ,DOBholder,Emailholder,Genderholder,Nameholder;

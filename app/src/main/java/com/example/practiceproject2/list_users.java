@@ -42,7 +42,7 @@ public class list_users extends AppCompatActivity {
         @Override protected void onStart()
         {
             super.onStart();
-            adapter.startLisenting();
+            adapter.startListening();
 
         }
     @Override protected void onStop()
